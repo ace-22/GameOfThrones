@@ -1,0 +1,274 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="cardxx">
+      <div class="cardx"><u>GOT BOOK'S DIRECTORY</u></div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <nav class="navbar navbar-light ">
+          <a
+            [routerLink]="['/home']"
+            class="navbar-brand"
+            style="margin-top:1.5vh;margin-bottom:2vh;color:rgb(17, 16, 16);"
+            >Home</a
+          >
+          <a
+            [routerLink]="['/houseview']"
+            class="navbar-brand"
+            style="margin-top:1.5vh;margin-bottom:2vh;color:rgb(17, 16, 16);"
+            >Houses</a
+          >
+          <a
+            [routerLink]="['/character']"
+            class="navbar-brand"
+            style="margin-top:1.5vh;margin-bottom:2vh;color:rgb(17, 16, 16);"
+            >Characters</a
+          >
+          <a
+            (click)="goback()"
+            class="navbar-brand btn"
+            style="margin-top:1.5vh;margin-bottom:2vh;color:rgb(17, 16, 16);"
+            >Go Back</a
+          >
+          <form #createBookForm="ngForm"></form>
+          <div class="form-group">
+            <select
+              [(ngModel)]="searchname"
+              #book="ngModel"
+              name="searchname"
+              class="form-control"
+              id="bookname"
+              required
+            >
+              <option *ngFor="let x of books1" [value]="x">{{ x }}</option>
+            </select>
+          </div>
+
+          <button
+            name="search"
+            type="submit"
+            (click)="navigateComponent()"
+            class="btn btn-primary"
+          >
+            Search
+          </button>
+        </nav>
+      </div>
+      <div class="alert" style="font-weight:bold;font-size:2rem;color:black">
+        <u>
+          Please Select the name of the book in the above search bar from the
+          given below mentioned books to get it's detailed info.
+        </u>
+      </div>
+      <div class="row">
+        <div class=" col-12 col-sm-4">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="
+      
+              https://cdn.waterstones.com/bookjackets/large/9780/0074/9780007448036.jpg"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5
+                class="card-title"
+                style="font-size:25px;color:black; font-style:oblique;border-radius:15px;"
+              >
+                A Game of Thrones
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-4 " style="margin:auto;">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="
+              https://images-na.ssl-images-amazon.com/images/I/51toTzgHGXL._SX324_BO1,204,203,200_.jpg"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5
+                class="card-title"
+                style="font-size:25px;color:black; font-style:oblique;border-radius:15px;"
+              >
+                A Clash of Kings
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-4 " style="margin:auto;">
+          <div class="card bg-light">
+            <img
+              class="card-img-top"
+              src="https://images-na.ssl-images-amazon.com/images/I/51sOF18SI%2BL._SX324_BO1,204,203,200_.jpg"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5
+                class="card-title"
+                style="font-size:25px;color:black; font-style:oblique;border-radius:15px;"
+              >
+                A Storm of Swords
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-4 " style="margin:auto;">
+          <div class="card bg-light">
+            <img
+              class="card-img-top"
+              src="http://images.paperbackswap.com/l/01/9101/9781477849101.jpg"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5
+                class="card-title"
+                style="font-size:25px;color:black; font-style:oblique;border-radius:15px;"
+              >
+                The Hedge Knight
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-4 " style="margin:auto;">
+          <div class="card bg-light">
+            <img
+              class="card-img-top"
+              src="https://awoiaf.westeros.org/thumb.php?f=AFeastForCrows.jpg&width=200"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5
+                class="card-title"
+                style="font-size:25px;color:black; font-style:oblique;border-radius:15px;"
+              >
+                A Feast for Crows
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-4 " style="margin:auto;">
+          <div class="card bg-light">
+            <img
+              class="card-img-top"
+              src="https://images-na.ssl-images-amazon.com/images/I/51ytkDbbfoL.jpg"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5
+                class="card-title"
+                style="font-size:25px;color:black; font-style:oblique;border-radius:15px;"
+              >
+                The Sworn Sword
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-4 " style="margin:auto;">
+          <div class="card bg-light">
+            <img
+              class="card-img-top"
+              src="https://images-na.ssl-images-amazon.com/images/I/617Nb05gD0L._SX318_BO1,204,203,200_.jpg"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5
+                class="card-title"
+                style="font-size:25px;color:black; font-style:oblique;border-radius:15px;"
+              >
+                The Mystery Knight
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-4 " style="margin:auto;">
+          <div class="card bg-light">
+            <img
+              class="card-img-top"
+              src="https://images-na.ssl-images-amazon.com/images/I/51f5%2BHsagGL._SX324_BO1,204,203,200_.jpg"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5
+                class="card-title"
+                style="font-size:25px;color:black; font-style:oblique;border-radius:15px;"
+              >
+                A Dance with Dragons
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-4 " style="margin:auto;">
+          <div class="card bg-light">
+            <img
+              class="card-img-top"
+              src="https://images.gr-assets.com/books/1511221635l/36632543.jpg"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5
+                class="card-title"
+                style="font-size:25px;color:black; font-style:oblique;border-radius:15px;"
+              >
+                The Princess and the Queen
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-4 " style="margin:auto;">
+          <div class="card bg-light">
+            <img
+              class="card-img-top"
+              src="https://awoiaf.westeros.org/thumb.php?f=Rouges_novella.jpg&width=250"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5
+                class="card-title"
+                style="font-size:25px;color:black; font-style:oblique;border-radius:15px;"
+              >
+                The Rogue Prince
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-4 " style="margin:auto;">
+          <div class="card bg-light">
+            <img
+              class="card-img-top"
+              src="http://www.georgerrmartin.com/wp-content/uploads/2014/03/World-of-Ice-and-Fire-jkt-ElioLinda-1.jpg"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5
+                class="card-title"
+                style="font-size:25px;color:black; font-style:oblique;border-radius:15px;"
+              >
+                World of Ice and Fire
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-4 " style="margin:auto;">
+          <div class="card bg-light">
+            <img
+              class="card-img-top"
+              src="https://cdn.waterstones.com/bookjackets/large/9780/0082/9780008238094.jpg"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5
+                class="card-title"
+                style="font-size:25px;color:black; font-style:oblique;border-radius:15px;"
+              >
+                A knight of seven kingdoms
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

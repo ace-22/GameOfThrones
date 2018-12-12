@@ -1,0 +1,32 @@
+.container-fluid {
+  background-image: url("http://www.widehdimages.com/uploads/large/games/game-of-thrones-season-all-houses-wallpaper.jpg");
+  background-repeat: no-repeat;
+
+  background-size: 100% 100%;
+  height: 100vh;
+  width: 100vw;
+}
+.navbar {
+  margin-top: 15vh;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(117, 113, 113);
+  border-radius: 15px;
+  background-image: url("https://thumbor.forbes.com/thumbor/600x300/https%3A%2F%2Fblogs-images.forbes.com%2Fdavidthier%2Ffiles%2F2017%2F08%2Fskyrim3.jpg");
+}
+.form-group {
+  border-radius: 15px;
+  background-color: rgb(5, 5, 5);
+  color: white;
+  margin: auto;
+}
+
+.cardx {
+  text-align: center;
+  color: black;
+
+  font-weight: bold;
+  border-radius: 15px;
+  font-size: 4rem;
+  margin-top: 10vh;
+}

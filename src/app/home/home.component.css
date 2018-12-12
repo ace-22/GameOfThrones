@@ -1,0 +1,37 @@
+.container-fluid {
+  background-image: url("https://www.pixelstalk.net/wp-content/uploads/2015/11/Game-of-thrones-season-4-wallpapers-hd.jpg");
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+
+  background-size: cover;
+}
+
+.card-img-top {
+  height: 45vh;
+  width: 20vw;
+  border-radius: 25px;
+  border-block-end: 25px;
+}
+.card {
+  margin-top: 15vh;
+  border-radius: 15px;
+}
+
+.cardx {
+  text-align: center;
+  color: black;
+
+  font-weight: bold;
+  border-radius: 15px;
+  font-size: 4rem;
+  margin-top: 10vh;
+}
+
+@media screen and (max-width: 768px) {
+  .card-img-top {
+    height: 50vh;
+    width: 80vw;
+    border-radius: 10px;
+  }
+}

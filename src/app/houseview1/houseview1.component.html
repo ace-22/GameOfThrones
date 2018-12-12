@@ -1,0 +1,472 @@
+<div class="container-fluid" *ngIf="arrayx.length > 0">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <nav class="navbar navbar-light ">
+          <a
+            [routerLink]="['/home']"
+            class="navbar-brand"
+            style="margin-top:1.5vh;margin-bottom:2vh;color:rgb(17, 16, 16);"
+            >Home</a
+          >
+          <a
+            [routerLink]="['/view']"
+            class="navbar-brand"
+            style="margin-top:1.5vh;margin-bottom:2vh;color:rgb(17, 16, 16);"
+            >Books</a
+          >
+          <a
+            [routerLink]="['/character']"
+            class="navbar-brand"
+            style="margin-top:1.5vh;margin-bottom:2vh;color:rgb(17, 16, 16);"
+            >Characters</a
+          >
+          <a
+            (click)="goback()"
+            class="navbar-brand btn"
+            style="margin-top:1.5vh;margin-bottom:2vh;color:rgb(17, 16, 16);"
+            >Go Back</a
+          >
+          <form class="form-inline" style="margin-top:2vh;margin-bottom:2vh;">
+            <input
+              class="form-control mr-sm-2"
+              name="shousename"
+              [(ngModel)]="searchname"
+              type="search"
+              placeholder="{{searchname}}"
+              aria-label="Search"
+              readonly
+            />
+          </form>
+        </nav>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="card text-white bg-dark mb-3" style="margin:auto;">
+          <div
+            class="card-header"
+            style="color:white;border-radius:15px;font-size:30px;margin-top:10vh;"
+          >
+            <u>{{ arrayx[0].name }}</u>
+          </div>
+          <br /><br /><br /><br />
+          <div class="card-body">
+            <div class="row">
+              <div
+                class="form-group row"
+                style="margin:auto;text-align: center;"
+                *ngIf="arrayx[0].name.length != 0"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Name</label
+                >
+                <div class="col-3 col-xs-12">{{ arrayx[0].name }}</div>
+              </div>
+            </div>
+
+            <br /><br />
+            <div class="row">
+              <div
+                class="form-group row"
+                style="margin:auto; text-align: center;"
+                *ngIf="arrayx[0].region.length != 0"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Region</label
+                >
+                <div class="col-3 col-xs-12">{{ arrayx[0].region }}</div>
+              </div>
+            </div>
+            <div class="row">
+              <div
+                class="form-group row"
+                style="margin:auto; text-align: center;"
+                *ngIf="arrayx[0].region.length < 1"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Region</label
+                >
+                <div class="col-3 col-xs-12">Not Available</div>
+              </div>
+            </div>
+            <br /><br />
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;"
+                *ngIf="arrayx[0].coatOfArms.length != 0"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >CoatOfArms</label
+                >
+                <div class="col-3 col-xs-12">{{ arrayx[0].coatOfArms }}</div>
+              </div>
+            </div>
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;"
+                *ngIf="arrayx[0].coatOfArms.length < 1"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >CoatOfArms</label
+                >
+                <div class="col-3 col-xs-12">Not Available</div>
+              </div>
+            </div>
+            <br /><br />
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;"
+                *ngIf="arrayx[0].words.length != 0"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Words</label
+                >
+                <div class="col-3 col-xs-12">{{ arrayx[0].words }}</div>
+              </div>
+            </div>
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;"
+                *ngIf="arrayx[0].words.length < 1"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Words</label
+                >
+                <div class="col-3 col-xs-12">Not Available</div>
+              </div>
+            </div>
+            <br /><br />
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;"
+                *ngIf="arrayx[0].titles.length > 1"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Titles</label
+                >
+                <div class="col-3 col-xs-12" *ngFor="let x of arrayx[0].titles">
+                  {{ x }}
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;"
+                *ngIf="arrayx[0].titles.length <= 1"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Titles</label
+                >
+                <div class="col-3 col-xs-12">Not Available</div>
+              </div>
+            </div>
+            <br /><br />
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;"
+                *ngIf="arrayx[0].seats.length != 0"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Seats</label
+                >
+                <div class="col-3 col-xs-12" style="color:white;">
+                  {{ arrayx[0].seats }}
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;"
+                *ngIf="arrayx[0].seats.length < 1"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Seats</label
+                >
+                <div class="col-3 col-xs-12" style="color:white;">
+                  Not Available
+                </div>
+              </div>
+            </div>
+            <br /><br />
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;color:white;"
+                *ngIf="arrayx[0].currentLord.length != 0"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Current-Lord</label
+                >
+                <a class="col-3 col-xs-12" style="color:white;">{{
+                  arrayx[0].currentLord
+                }}</a>
+              </div>
+            </div>
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;color:white;"
+                *ngIf="arrayx[0].currentLord.length < 1"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Current-Lord</label
+                >
+                <a class="col-3 col-xs-12" style="color:white;"
+                  >Not Avaialable
+                </a>
+              </div>
+            </div>
+            <br /><br />
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;color:white;"
+                *ngIf="arrayx[0].heir.length != 0"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Heir</label
+                >
+                <a class="col-2 col-xs-12" style="color:white;">{{
+                  arrayx[0].heir
+                }}</a>
+              </div>
+            </div>
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;color:white;"
+                *ngIf="arrayx[0].heir.length < 1"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Heir</label
+                >
+                <a class="col-2 col-xs-12" style="color:white;"
+                  >Not Available</a
+                >
+              </div>
+            </div>
+            <br /><br />
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;color:white;"
+                *ngIf="arrayx[0].overlord.length != 0"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >OverLord</label
+                >
+                <a class="col-3 col-xs-12" style="color:white;">{{
+                  arrayx[0].overlord
+                }}</a>
+              </div>
+            </div>
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;color:white;"
+                *ngIf="arrayx[0].overlord.length < 1"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >OverLord</label
+                >
+                <a class="col-3 col-xs-12" style="color:white;"
+                  >Not Available
+                </a>
+              </div>
+            </div>
+            <br /><br />
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;color:white;"
+                *ngIf="arrayx[0].founded.length != 0"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Founded</label
+                >
+                <div class="col-3 col-xs-12" style="color:white;">
+                  {{ arrayx[0].founded }}
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;color:white;"
+                *ngIf="arrayx[0].founded.length < 1"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Founded</label
+                >
+                <div class="col-3 col-xs-12" style="color:white;">
+                  Not Available
+                </div>
+              </div>
+            </div>
+            <br /><br />
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;color:white;"
+                *ngIf="arrayx[0].founder.length != 0"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Founder</label
+                >
+                <div class="col-3 col-xs-12" style="color:white;">
+                  {{ arrayx[0].founder }}
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;color:white;"
+                *ngIf="arrayx[0].founder.length < 1"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Founder</label
+                >
+                <div class="col-3 col-xs-12" style="color:white;">
+                  Not Available
+                </div>
+              </div>
+            </div>
+            <br /><br />
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;color:white;"
+                *ngIf="arrayx[0].diedOut.length != 0"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Died-Out</label
+                >
+                <div class="col-3 col-xs-12" style="color:white;">
+                  {{ arrayx[0].diedOut }}
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;color:white;"
+                *ngIf="arrayx[0].diedOut.length < 1"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Died-Out</label
+                >
+                <div class="col-3 col-xs-12" style="color:white;">
+                  Not Available
+                </div>
+              </div>
+            </div>
+            <br /><br />
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;color:white;"
+                *ngIf="arrayx[0].ancestralWeapons.length > 1"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Ancestral-Weapons</label
+                >
+                <div class="col-3 col-xs-12" style="color:white;">
+                  {{ arrayx[0].ancestralWeapons }}
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;color:white;"
+                *ngIf="arrayx[0].ancestralWeapons.length <= 1"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Ancestral-Weapons</label
+                >
+                <div class="col-3 col-xs-12" style="color:white;">
+                  Not Available
+                </div>
+              </div>
+            </div>
+            <br /><br />
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;color:white;"
+                *ngIf="arrayx[0].cadetBranches.length != 0"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Cadet-Branches</label
+                >
+                <div class="col-3 col-xs-12" style="color:white;">
+                  {{ arrayx[0].cadetBranches }}
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;color:white;"
+                *ngIf="arrayx[0].cadetBranches.length < 1"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Cadet-Branches</label
+                >
+                <div class="col-3 col-xs-12" style="color:white;">
+                  Not Available
+                </div>
+              </div>
+            </div>
+            <br /><br />
+            <div class="row">
+              <br />
+              <div
+                class="form-group row"
+                style="text-align: center;color:white;"
+                *ngIf="arrayx[0].swornMembers.length != 0"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Sworn-Members</label
+                >
+                <a
+                  class=" col-3 col-xs-12"
+                  style="text-align:center;color:white;"
+                  *ngFor="let b of arrayx[0].swornMembers"
+                  >{{ b }}
+                </a>
+              </div>
+            </div>
+            <div class="row">
+              <br />
+              <div
+                class="form-group row"
+                style="text-align: center;color:white;"
+                *ngIf="arrayx[0].swornMembers.length < 1"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Sworn-Members</label
+                >
+                <a
+                  class="col-3 col-xs-12"
+                  style="text-align:center;color:white;"
+                  >Not Available
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

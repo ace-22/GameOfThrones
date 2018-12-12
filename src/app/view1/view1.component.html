@@ -1,0 +1,184 @@
+<div class="container-fluid" *ngIf="array.length > 0">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <nav class="navbar navbar-light ">
+          <a
+            [routerLink]="['/home']"
+            class="navbar-brand"
+            (mouseover)="underline()"
+            (mouseout)="normal()"
+            style="margin-top:1.5vh;margin-bottom:2vh;color:rgb(17, 16, 16);"
+            >Home</a
+          >
+          <a
+            [routerLink]="['/houseview']"
+            class="navbar-brand"
+            style="margin-top:1.5vh;margin-bottom:2vh;color:rgb(17, 16, 16);"
+            >Houses</a
+          >
+          <a
+            [routerLink]="['/character']"
+            class="navbar-brand"
+            style="margin-top:1.5vh;margin-bottom:2vh;color:rgb(17, 16, 16);"
+            >Characters</a
+          >
+          <a
+            (click)="goback()"
+            class="navbar-brand btn"
+            style="margin-top:1.5vh;margin-bottom:2vh;color:rgb(17, 16, 16);"
+            >Go Back</a
+          >
+          <form class="form-inline" style="margin-top:2vh;margin-bottom:2vh;">
+            <input
+              class="form-control mr-sm-2"
+              name="bookname"
+              type="search"
+              [(ngModel)]="searchname"
+              aria-label="Search"
+              readonly
+            />
+          </form>
+        </nav>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="card text-white bg-dark mb-3" style="margin:auto;">
+          <div
+            class="card-header"
+            style="color:black;border-radius:15px;font-size:30px;margin-top:10vh;"
+          >
+            <u>{{ array[0].name }}</u>
+          </div>
+          <br /><br /><br /><br />
+          <div class="card-body">
+            <div class="row">
+              <div class="form-group row" style="margin:auto;">
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Name</label
+                >
+                <div class="col-3 col-xs-12">{{ array[0].name }}</div>
+              </div>
+            </div>
+            <br /><br />
+            <div class="row">
+              <div class="form-group row" style="margin:auto;">
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Authors</label
+                >
+                <div class="col-3 col-xs-12">{{ array[0].authors[0] }}</div>
+              </div>
+            </div>
+            <br /><br />
+            <div class="row">
+              <div class="form-group row" style="margin:auto;">
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Publisher</label
+                >
+                <div class="col-3 col-xs-12">{{ array[0].publisher }}</div>
+              </div>
+            </div>
+            <br /><br />
+            <div class="row">
+              <div class="form-group row" style="margin:auto;">
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Number of pages</label
+                >
+                <div class="col-3 col-xs-12">{{ array[0].numberOfPages }}</div>
+              </div>
+            </div>
+            <br /><br />
+            <div class="row">
+              <div class="form-group row" style="margin:auto;">
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Country</label
+                >
+                <div class="col-3 col-xs-12">{{ array[0].country }}</div>
+              </div>
+            </div>
+            <br /><br />
+            <div class="row">
+              <div class="form-group row" style="margin:auto;">
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Released</label
+                >
+                <div class="col-3 col-xs-12">
+                  {{ array[0].released | date: "dd/MM/yyyy" }}
+                </div>
+              </div>
+            </div>
+            <br /><br />
+            <div class="row">
+              <div class="form-group row" style="margin:auto;">
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >ISBN</label
+                >
+                <div class="col-3 col-xs-12">{{ array[0].isbn }}</div>
+              </div>
+            </div>
+            <br /><br />
+            <div class="row">
+              <div
+                class="form-group row"
+                style="margin:auto;"
+                *ngIf="array[0].characters.length != 0"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Characters</label
+                >
+                <div
+                  class="col-3 col-xs-12"
+                  *ngFor="let a of array[0].characters"
+                >
+                  {{ a }}
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div
+                class="form-group row"
+                style="margin:auto;"
+                *ngIf="array[0].characters.length < 1"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Characters</label
+                >
+                <div class="col-3 col-xs-12">Not Available</div>
+              </div>
+            </div>
+            <div class="row">
+              <div
+                class="form-group row"
+                style="margin:auto;"
+                *ngIf="array[0].povCharacters.length != 0"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Pov-Characters</label
+                >
+                <div
+                  class="col-3 col-xs-12"
+                  *ngFor="let b of array[0].povCharacters"
+                >
+                  {{ b }}
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div
+                class="form-group row"
+                style="margin:auto;"
+                *ngIf="array[0].povCharacters.length < 1"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Pov-Characters</label
+                >
+                <div class="col-3 col-xs-12">Not Available</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

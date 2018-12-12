@@ -1,0 +1,18 @@
+.container-fluid {
+  background-image: url("https://i2.wp.com/www.dianematthewsdance.com/wp-content/uploads/2014/11/snow-winter-wallpaper-hd.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  background-size: cover;
+}
+.navbar {
+  margin-top: 20vh;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(117, 113, 113);
+  border-radius: 15px;
+  background-image: url("https://thumbor.forbes.com/thumbor/600x300/https%3A%2F%2Fblogs-images.forbes.com%2Fdavidthier%2Ffiles%2F2017%2F08%2Fskyrim3.jpg");
+}
+.form-group {
+  font-weight: bold;
+}

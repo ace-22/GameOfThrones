@@ -1,0 +1,41 @@
+.container-fluid {
+  background-image: url("https://images5.alphacoders.com/637/thumb-1920-637668.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  background-size: cover;
+}
+.navbar {
+  margin-top: 15vh;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(117, 113, 113);
+  border-radius: 15px;
+  background-image: url("https://thumbor.forbes.com/thumbor/600x300/https%3A%2F%2Fblogs-images.forbes.com%2Fdavidthier%2Ffiles%2F2017%2F08%2Fskyrim3.jpg");
+}
+.card-img-top {
+  height: 45vh;
+  width: 20vw;
+  border-radius: 10px;
+}
+.card {
+  margin-top: 20vh;
+  border-radius: 15px;
+}
+.cardx {
+  text-align: center;
+  color: black;
+
+  font-weight: bold;
+  border-radius: 15px;
+  font-size: 4rem;
+  margin-top: 10vh;
+}
+
+@media screen and (max-width: 768px) {
+  .card-img-top {
+    height: 50vh;
+    width: 60vw;
+    border-radius: 10px;
+  }
+}

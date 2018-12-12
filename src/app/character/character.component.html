@@ -1,0 +1,62 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="cardxx">
+      <div class="cardx"><u>GOT CHARACTER'S DIRECTORY</u></div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <nav class="navbar navbar-light ">
+          <a
+            [routerLink]="['/home']"
+            class="navbar-brand"
+            style="margin-top:1.5vh;margin-bottom:2vh;color:rgb(17, 16, 16);"
+            >Home</a
+          >
+          <a
+            [routerLink]="['/view']"
+            class="navbar-brand"
+            style="margin-top:1.5vh;margin-bottom:2vh;color:rgb(17, 16, 16);"
+            >Books</a
+          >
+          <a
+            [routerLink]="['/houseview']"
+            class="navbar-brand"
+            style="margin-top:1.5vh;margin-bottom:2vh;color:rgb(17, 16, 16);"
+            >Houses</a
+          >
+          <a
+            (click)="goback()"
+            class="navbar-brand btn"
+            style="margin-top:1.5vh;margin-bottom:2vh;color:rgb(17, 16, 16);"
+            >Go Back</a
+          >
+          <form
+            name="XYZ"
+            #formVal="ngForm"
+            class="form-inline"
+            style="margin-top:2vh;margin-bottom:2vh;"
+          >
+            <input
+              class="form-control mr-sm-2"
+              [(ngModel)]="searchname"
+              name="searchname"
+              #houseName="ngModel"
+              type="search"
+              placeholder="Enter the name of a House"
+              aria-label="Search"
+            />
+
+            <button
+              name="charactername"
+              type="submit"
+              (click)="navigateComponent()"
+              class="btn btn-outline-success my-2 my-sm-0"
+            >
+              Search
+            </button>
+          </form>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>

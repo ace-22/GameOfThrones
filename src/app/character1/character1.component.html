@@ -1,0 +1,440 @@
+<div class="container-fluid" *ngIf="arrayxx.length > 0">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <nav class="navbar navbar-light ">
+          <a
+            [routerLink]="['/home']"
+            class="navbar-brand"
+            style="margin-top:1.5vh;margin-bottom:2vh;color:rgb(17, 16, 16);"
+            >Home</a
+          >
+          <a
+            [routerLink]="['/view']"
+            class="navbar-brand"
+            style="margin-top:1.5vh;margin-bottom:2vh;color:rgb(17, 16, 16);"
+            >Books</a
+          >
+          <a
+            [routerLink]="['/houseview']"
+            class="navbar-brand"
+            style="margin-top:1.5vh;margin-bottom:2vh;color:rgb(17, 16, 16);"
+            >Houses</a
+          >
+          <a
+            (click)="goback()"
+            class="navbar-brand btn"
+            style="margin-top:1.5vh;margin-bottom:2vh;color:rgb(17, 16, 16);"
+          >
+            Go Back
+          </a>
+          <form class="form-inline" style="margin-top:2vh;margin-bottom:2vh;">
+            <input
+              class="form-control mr-sm-2"
+              name="scharactername"
+              [(ngModel)]="searchname"
+              type="search"
+              placeholder="{{searchname}}"
+              aria-label="Search"
+              readonly
+            />
+          </form>
+        </nav>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="card text-white bg-dark mb-3" style="margin:auto;">
+          <div
+            class="card-header"
+            style="color:white;border-radius:15px;font-size:30px;margin-top:10vh;"
+          >
+            <u>{{ arrayxx[0].name }}</u>
+          </div>
+          <br /><br /><br /><br />
+          <div class="card-body">
+            <div class="row">
+              <div
+                class="form-group row"
+                style="margin:auto;text-align: center;"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Name</label
+                >
+                <div class="col-3 col-xs-12">{{ arrayxx[0].name }}</div>
+              </div>
+            </div>
+            <br /><br />
+            <div class="row">
+              <div
+                class="form-group row"
+                style="margin:auto; text-align: center;"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Gender</label
+                >
+                <div class="col-3 col-xs-12">{{ arrayxx[0].gender }}</div>
+              </div>
+            </div>
+            <br /><br />
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;"
+                *ngIf="arrayxx[0].culture.length != 0"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Culture</label
+                >
+                <div class="col-3 col-xs-12">{{ arrayxx[0].culture }}</div>
+              </div>
+            </div>
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;"
+                *ngIf="arrayxx[0].culture.length < 1"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Culture</label
+                >
+                <div class="col-3 col-xs-12">Not Available</div>
+              </div>
+            </div>
+            <br /><br />
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;"
+                *ngIf="arrayxx[0].born.length != 0"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Born</label
+                >
+                <div class="col-3 col-xs-12">{{ arrayxx[0].born }}</div>
+              </div>
+            </div>
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;"
+                *ngIf="arrayxx[0].born.length < 1"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Born</label
+                >
+                <div class="col-3 col-xs-12">Not Available</div>
+              </div>
+            </div>
+            <br /><br />
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;"
+                *ngIf="arrayxx[0].died.length != 0"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Died</label
+                >
+                <div class="col-3 col-xs-12">{{ arrayxx[0].died }}</div>
+              </div>
+            </div>
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;"
+                *ngIf="arrayxx[0].died.length < 1"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Died</label
+                >
+                <div class="col-3 col-xs-12">Not Available</div>
+              </div>
+            </div>
+            <br /><br />
+
+            <div class="row">
+              <div
+                class="form-group row"
+                style="text-align: center;"
+                *ngIf="arrayxx[0].titles.length > 1"
+              >
+                <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                  >Titles</label
+                >
+                <a
+                  class="col-3 col-xs-12"
+                  style="color:white;"
+                  *ngFor="let d of arrayxx[0].titles"
+                  >{{ d }}</a
+                >
+              </div>
+            </div>
+            <div
+              class="form-group row"
+              style="text-align: center;"
+              *ngIf="arrayxx[0].titles.length <= 1"
+            >
+              <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                >Titles</label
+              >
+              <a class="col-3 col-xs-12" style="color:white;">Not Available</a>
+            </div>
+          </div>
+          <br /><br />
+          <div class="row">
+            <div
+              class="form-group row"
+              style="text-align: center;"
+              *ngIf="arrayxx[0].aliases.length > 1"
+            >
+              <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                >Aliases</label
+              >
+              <a
+                class="col-2 col-xs-12"
+                style="color:white;"
+                *ngFor="let c of arrayxx[0].aliases"
+                >{{ c }}</a
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div
+              class="form-group row"
+              style="text-align: center;"
+              *ngIf="arrayxx[0].aliases.length <= 1"
+            >
+              <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                >Aliases</label
+              >
+              <a class="col-2 col-xs-12" style="color:white;">Not Available</a>
+            </div>
+          </div>
+          <br /><br />
+          <div class="row">
+            <div
+              class="form-group row"
+              style="text-align: center;"
+              *ngIf="arrayxx[0].father.length != 0"
+            >
+              <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                >Father</label
+              >
+              <a class="col-3 col-xs-12" style="color:white;">{{
+                arrayxx[0].father
+              }}</a>
+            </div>
+          </div>
+          <div class="row">
+            <div
+              class="form-group row"
+              style="text-align: center;"
+              *ngIf="arrayxx[0].father.length < 1"
+            >
+              <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                >Father</label
+              >
+              <a class="col-3 col-xs-12" style="color:white;">Not Available</a>
+            </div>
+          </div>
+          <br /><br />
+          <div class="row">
+            <div
+              class="form-group row"
+              style="text-align: center;"
+              *ngIf="arrayxx[0].mother.length != 0"
+            >
+              <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                >Mother</label
+              >
+              <div class="col-3 col-xs-12" style="color:white;">
+                {{ arrayxx[0].mother }}
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div
+              class="form-group row"
+              style="text-align: center;"
+              *ngIf="arrayxx[0].mother.length < 1"
+            >
+              <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                >Mother</label
+              >
+              <div class="col-3 col-xs-12" style="color:white;">
+                Not Available
+              </div>
+            </div>
+          </div>
+          <br /><br />
+          <div class="row">
+            <div
+              class="form-group row"
+              style="text-align: center;"
+              *ngIf="arrayxx[0].spouse.length != 0"
+            >
+              <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                >Spouse</label
+              >
+              <div class="col-3 col-xs-12" style="color:white;">
+                {{ arrayxx[0].spouse }}
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div
+              class="form-group row"
+              style="text-align: center;"
+              *ngIf="arrayxx[0].spouse.length < 1"
+            >
+              <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                >Spouse</label
+              >
+              <div class="col-3 col-xs-12" style="color:white;">
+                Not Available
+              </div>
+            </div>
+          </div>
+          <br /><br />
+          <div class="row">
+            <div
+              class="form-group row"
+              style="text-align: center;"
+              *ngIf="arrayxx[0].books.length > 1"
+            >
+              <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                >Books</label
+              >
+              <div
+                class="col-3 col-xs-12"
+                style="color:white;"
+                *ngFor="let a of arrayxx[0].books"
+              >
+                {{ a }}
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div
+              class="form-group row"
+              style="text-align: center;"
+              *ngIf="arrayxx[0].books[0].length <= 1"
+            >
+              <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                >Books</label
+              >
+              <div class="col-3 col-xs-12" style="color:white;">
+                Not Available
+              </div>
+            </div>
+          </div>
+          <br /><br />
+          <div class="row">
+            <div
+              class="form-group row"
+              style="text-align: center;"
+              *ngIf="arrayxx[0].povBooks.length != 0"
+            >
+              <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                >Pov-Books</label
+              >
+              <div
+                class="col-3 col-xs-12"
+                style="color:white;"
+                *ngFor="let e of arrayxx[0].povBooks"
+              >
+                {{ e }}
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div
+              class="form-group row"
+              style="text-align: center;"
+              *ngIf="arrayxx[0].povBooks.length < 1"
+            >
+              <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                >Pov-Books</label
+              >
+              <div class="col-3 col-xs-12" style="color:white;">
+                Not Available
+              </div>
+            </div>
+          </div>
+          <br /><br />
+          <div class="row">
+            <div
+              class="form-group row"
+              style="text-align: center;"
+              *ngIf="arrayxx[0].tvSeries[0].length != 0"
+            >
+              <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                >Tv-Series</label
+              >
+              <div
+                class="col-3 col-xs-12"
+                style="color:white;"
+                *ngFor="let f of arrayxx[0].tvSeries"
+              >
+                {{ f }}
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div
+              class="form-group row"
+              style="text-align: center;"
+              *ngIf="arrayxx[0].tvSeries[0].length < 1"
+            >
+              <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                >Tv-Series</label
+              >
+              <div
+                class="col-3 col-xs-12"
+                style="color:white;"
+                *ngFor="let f of arrayxx[0].tvSeries"
+              >
+                Not Available
+              </div>
+            </div>
+          </div>
+          <br /><br />
+          <div class="row">
+            <br />
+            <div
+              class="form-group row"
+              style="text-align: center;"
+              *ngIf="arrayxx[0].playedBy[0].length != 0"
+            >
+              <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                >Played By</label
+              >
+              <a
+                class="col-3 col-xs-12"
+                style="text-align:center;"
+                style="color:white;"
+                >{{ arrayxx[0].playedBy }}
+              </a>
+            </div>
+            <div
+              class="form-group row"
+              style="text-align: center;"
+              *ngIf="arrayxx[0].playedBy[0].length < 1"
+            >
+              <label for="staticEmail" class="col-2 col-xs-4 col-form-label"
+                >Played By</label
+              >
+              <a
+                class="col-3 col-xs-12"
+                style="text-align:center;"
+                style="color:white;"
+                >Not Available
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

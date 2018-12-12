@@ -1,0 +1,87 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="cardxx">
+      <div class="cardx"><u>GAME OF THRONE'S</u></div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-sm-4 " style="margin-left:10vw; margin:auto;">
+        <div class="card">
+          <img
+            class="card-img-top"
+            src="
+
+          https://images5.alphacoders.com/403/403408.jpg"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5
+              class="card-title"
+              style="font-style:bold;font-size:2rem;color:black;"
+            >
+              HOUSE
+            </h5>
+            <p
+              class="card-text"
+              style="background-color:rgb(240, 240, 241);border-radius:15px;"
+            >
+              Know about the various Royal House's
+            </p>
+            <a [routerLink]="['/houseview']" class="btn btn-primary">Search</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 " style="margin:auto;">
+        <div class="card">
+          <img
+            class="card-img-top"
+            src="
+          https://images7.alphacoders.com/516/516547.jpg"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5
+              class="card-title"
+              style="font-style:bold;font-size:2rem;color:black"
+            >
+              CHARACTER
+            </h5>
+            <p
+              class="card-text"
+              style="background-color:rgb(240, 240, 241);border-radius:15px;"
+            >
+              Detailed info about your favourite character in one click.
+            </p>
+            <a [routerLink]="['/character']" class="btn btn-primary">Search</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 " style="margin:auto;">
+        <div class="card bg-light">
+          <img
+            class="card-img-top"
+            src="https://winteriscoming.net/wp-content/blogs.dir/385/files/2014/09/ASOIAF-Set.jpg"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5
+              class="card-title"
+              style="font-style:bold;font-size:2rem;color:black"
+            >
+              BOOK'S
+            </h5>
+            <p
+              class="card-text"
+              style="background-color:rgb(240, 240, 241);border-radius:15px;"
+            >
+              Info about your favourite George R.R martin classic.
+            </p>
+            <a [routerLink]="['/view']" class="btn btn-primary">Search</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  </div>
+
+  <router-outlet></router-outlet>
+</div>
